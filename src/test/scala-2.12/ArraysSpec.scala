@@ -5,7 +5,7 @@ import org.scalatest.{FlatSpec, Matchers}
   */
 class ArraysSpec extends FlatSpec with Matchers{
 
-  "Test" should "specify Array" in {
+  "Test" should "demonstrate Arrays usage" in {
     (1).+(2) should equal (3)
     1 + 2  should equal (3)
     val mutableArrayInitializedWithFactoryMethod = Array.apply(1,2,3)
@@ -16,6 +16,8 @@ class ArraysSpec extends FlatSpec with Matchers{
     mutableArrayInitializedWithSyntaticSugar(1) should equal (mutableArray(1))
     mutableArray should not equal (mutableArrayInitializedWithSyntaticSugar)
 
+    val listCreatedFromPrependMethod = 1 :: List(2,4)
+    listCreatedFromPrependMethod should equal (List(1,2,4))
   }
 
 }
