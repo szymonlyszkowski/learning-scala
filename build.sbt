@@ -1,10 +1,10 @@
-name := """hello-scala"""
+name := """learning-scala"""
 
 version := "1.0"
 
-scalaVersion := "2.11.7"
-
-libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.4" % "test"
+scalaVersion := "2.12.1"
+libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.1"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.1" % "test"
 
 
 fork in run := true
