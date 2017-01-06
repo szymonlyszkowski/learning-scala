@@ -12,13 +12,13 @@ class IntPrinter(stream: OutputStream) {
     for (element <- sequence) print(element)
   }
 
-  def printSequenceUsingForeach(sequence: Seq[Int]) = {
+  def printSequenceUsingPartiallyAppliedFunctionInForeach(sequence: Seq[Int]) = {
     Console setOut (stream)
     sequence.foreach(print)
   }
 
 
-  def printSequenceUsingLambdaInForeach(sequence: Seq[Int]) = {
+  def printSequenceUsingFunctionLiteralInForeach(sequence: Seq[Int]) = {
     Console.setOut(stream)
     sequence.foreach(s => print(s))
   }

@@ -18,14 +18,14 @@ class IntPrinterSpec extends FlatSpec with Matchers {
   "IntPrinter" should "print string using foreach & lambda" in {
     val stream = new ByteArrayOutputStream()
     val typeIntPrinter = new IntPrinter(stream)
-    typeIntPrinter.printSequenceUsingLambdaInForeach(Seq(1, 2, 3))
+    typeIntPrinter.printSequenceUsingFunctionLiteralInForeach(Seq(1, 2, 3))
     stream.toString should equal ("123")
   }
 
   "IntPrinter" should "print string using foreach withoutLambda" in {
     val stream = new ByteArrayOutputStream()
     val typeIntPrinter = new IntPrinter(stream)
-    typeIntPrinter.printSequenceUsingForeach(Seq(1, 2, 3))
+    typeIntPrinter.printSequenceUsingPartiallyAppliedFunctionInForeach(Seq(1, 2, 3))
     stream.toString should equal ("123")
   }
 
