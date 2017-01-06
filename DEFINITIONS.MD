@@ -17,7 +17,14 @@ Scala lists are always immutable. They are designed to enable a functional style
 `:::` method - concatenates two lists and returns new one.
 `::`  method called **cons** - prepends a new element to the beginning of an existing list and returns resulting list. Takes constant time!
 Methods which ends with colon `:` above are invoked on **right** operand!
-`:+` method - appends element to list. **Should not be used** because time to append element grows linearly with list size. Instead `ListBuffer` class should be used when applying such operation. When this is done `toList` can be used to obtain list. Other option is prepending(`::`) element to `List` & call `reverse` method. Each list ends with `Nil`
+`:+` method - appends element to list. **Should not be used** because time to append element grows linearly with list size. Instead `ListBuffer` class should be used when applying such operation. When this is done `toList` can be used to obtain list. Other option is prepending(`::`) element to `List` & call `reverse` method. Each list ends with `Nil`.
+`val oneTwoThree = 1 :: 2 :: 3 :: Nil`
+######Tuples
+Tuples are immutable like scala lists but can contain different types of elements. Indexed from `1` tradition inherited from other languages like Haskell and ML.
 ```
-val oneTwoThree = 1 :: 2 :: 3 :: Nil
+val tuple = (1,"tuple element", 1.2222)
+val tupleWithExplicitType = Tuple2[Int,String](1,"tuple element")
+val tupleWithExplicitTypeAndNew = new Tuple2[Int, String](1,"second tuple element")
 ```
+`tuple(1) - will fail` as **apply** method always return the same type
+Scala library conceptually allows to defined up to 22 elements in tuple `Tuple22`
