@@ -1,5 +1,7 @@
 import org.scalatest.{FlatSpec, Matchers}
 
+import scala.collection.immutable.Stack
+
 /**
   * Created by szymonidas on 1/6/17.
   */
@@ -11,7 +13,7 @@ class TupleSpec extends FlatSpec with Matchers{
     tuple._2 should equal ("second tuple element")
     val tupleWithExplicitType = Tuple2[Int, String](1,"second tuple element")
     var tupleWithExplicitTypeVar = new Tuple2[Int, String](1,"second tuple element")
-//    tupleWithExplicitTypeVar._1 = 2 - THIS WILL COMPILER FAIL!
+//    tupleWithExplicitTypeVar._1 = 2 - THIS WILL MAKE COMPILER FAIL!
   }
 
 }
