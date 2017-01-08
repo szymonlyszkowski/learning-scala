@@ -39,3 +39,24 @@ val mutableMap = mutable.Map(3->"element with key 3", 4 -> "element with key 4")
 ```
 ######Balanced attitude
 Prefer `val`s, immutable objects, methods without side effects. Reach for them first. Use `var`s, mutable objects and methods with side effects when you have a specific need and justification for them.
+######Objects and classes
+Default access modifier is **public**
+```
+class ChecksumAccumulator {
+var sum = 0
+}
+val acc = new ChecksumAccumulator
+val csa = new ChecksumAccumulator
+```
+![Alt text](images/initMemoryVar.jpg "Optional title")
+```
+acc.sum = 3
+```
+![Alt text](images/reassignedMemoryVar.jpg "Optional title")
+
+Method parameters in Scala are always **`val` not `var`**! Thank's to it developer does not need to look further to determine if parameter passed was reassigned.
+Methods with result type `Unit` are executed for their side effects (mutating state somewhere external to the method or I/O action). If method is executed only for it's side effects it is called **_procedure_**
+######Singleton objects
+Scala classes cannot have static members. 
+Defined by keyword **`object`**. When singleton object shares the same name with a class it's called **_companion object_**. Both **_companion class_** and **_comapnion object_** must be deinfed in the same source file. Companion objects and companion classes can access each other private members.
+Class vs. Object: object does not take input parameters (as connot be instantiated), object is implemented as an instance of a _synthetic class_ (same as Java) i.e. `ChecksumAccumulator$`. A singleton object which does not share the same name with a companion class is called **_standalone object_**.
